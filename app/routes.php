@@ -11,7 +11,16 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/', 'HomeController@hello');
+
+Route::group(array('before' => 'guest'), function()
 {
-	return View::make('hello');
+	Route::get('/user/create', 'UserController@getCreate');
+	Route::get('/user/login', 'UserController@getLogin');
+
+	Route::group(array(), function()
+	{
+		Route::post('user/create', 'UserController@postCreate');
+		Route::post('user/login', 'UserController@postLogin');
+	});
 });
