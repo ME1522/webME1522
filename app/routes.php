@@ -24,3 +24,6 @@ Route::group(array('before' => 'guest'), function()
 		Route::post('user/login', 'UserController@postLogin');
 	});
 });
+Route::get('/galeri',function(){
+	return View::make('Bildgalleri');
+});

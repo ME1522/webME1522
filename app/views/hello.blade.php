@@ -7,7 +7,9 @@
 
 @stop
 @section('content')
+	
+	
 
-Homepage bitches :D
+
 
 @stop
